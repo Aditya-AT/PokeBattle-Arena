@@ -111,3 +111,18 @@ Team One wins!
 
 
 ![alt text](https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/Ashs-Strongest-Pok--mon-From-Season-1-Ranked-featured-image.jpg)
+
+
+## Future Improvements
+1. Advanced Move Selection: Implementing a more sophisticated move selection mechanism for Pokémon.
+2. Graphical Interface: Developing a graphical user interface for the battle simulation.
+
+## Contributing
+If you'd like to contribute to this project, please fork the repository and submit a pull request with your improvements. Contributions are welcome!
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+Pokémon names and types are trademarks of Nintendo, Game Freak, and The Pokémon Company.
+Any third-party images or content used in this project are the property of their respective owners and are used here for educational purposes under fair use.
