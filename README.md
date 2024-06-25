@@ -91,14 +91,14 @@ Here's an example of what the output might look like:
 
 ```plaintext
 --- Round 1 ---
-Charizard (Team One) vs Blastoise (Team Two)
+Charizard (Ash's team) vs Blastoise (Gary's Team)
 Charizard attacks with Fire type. Deals 10 damage to Blastoise. Blastoise has 30 HP left.
 Blastoise attacks with Water type. Deals 8 damage to Charizard. Charizard has 32 HP left.
 
 Press Enter to continue to the next round...
 
 --- Round 2 ---
-Charizard (Team One) vs Blastoise (Team Two)
+Charizard (Ash's team) vs Blastoise (Gary's Team)
 Charizard attacks with Fire type. Deals 12 damage to Blastoise. Blastoise has 18 HP left.
 Blastoise attacks with Water type. Deals 10 damage to Charizard. Charizard has 22 HP left.
 
