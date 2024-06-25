@@ -58,7 +58,6 @@ TYPE_TABLE = {'normal': {'normal': 1, 'fire': 1 , 'water': 1, 'electric': 1, 'gr
               }
 
 
-# Assuming the previous Pokemon class definition and battle functions are available
 
 def calculate_type_effectiveness(attack_type, defender_types):
     """Calculates the overall type effectiveness of an attack against potentially dual-typed Pokémon."""
@@ -106,7 +105,7 @@ def choose_next_pokemon(team, opposing_pokemon):
             best_effectiveness = effectiveness
     return best_choice if best_choice else random.choice(alive_pokemon)
 
-def simulate_battle(team_one, team_two):
+def simulate_battle(trainer_one, team_one, trainer_two, team_two):
     """Simulates a battle between two teams of Pokémon, handling different team sizes."""
     round_number = 1
     team_one_pokemon = choose_next_pokemon(team_one, None)
@@ -114,7 +113,7 @@ def simulate_battle(team_one, team_two):
 
     while check_team_alive(team_one) and check_team_alive(team_two):
         print(f"\n--- Round {round_number} ---")
-        print(f"{team_one_pokemon.name} (Team One) vs {team_two_pokemon.name} (Team Two)")
+        print(f"{team_one_pokemon.name} ({trainer_one}'s Team) vs {team_two_pokemon.name} ({trainer_two}'s Team)")
 
         if team_one_pokemon.speed > team_two_pokemon.speed:
             battle_round(team_one_pokemon, team_two_pokemon)
@@ -139,8 +138,9 @@ def simulate_battle(team_one, team_two):
         input("\nPress Enter to continue to the next round...")
 
     if check_team_alive(team_one):
-        print("\nTeam One wins!")
+        print(f"\n{trainer_one}'s team wins!")
     elif check_team_alive(team_two):
-        print("\nTeam Two wins!")
+        print(f"\n{trainer_two}'s team wins!")
     else:
         print("\nIt's a tie!")
+
