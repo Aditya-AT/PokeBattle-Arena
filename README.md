@@ -1,5 +1,6 @@
 # PokeBattle Arena
 ![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ELb1h1uAMhPuoA3flKMxKUkUd4-i1NNrfw&s)
+
 This Pokémon Battle Simulation project is a simplified version of Pokémon battles, designed to simulate battles between teams of Pokémon based on their types, stats, and speed. The project includes team generation, type effectiveness calculation, and a turn-based battle system.
 
 ## Features
@@ -109,4 +110,4 @@ Team One wins!
 ```
 
 
-![alt text]([http://url/to/img.png](https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/Ashs-Strongest-Pok--mon-From-Season-1-Ranked-featured-image.jpg))
+![alt text](https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/Ashs-Strongest-Pok--mon-From-Season-1-Ranked-featured-image.jpg)
