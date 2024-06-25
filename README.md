@@ -10,6 +10,19 @@ This Pokémon Battle Simulation project is a simplified version of Pokémon batt
 - **Type-Based Pokémon Selection**: Select the next Pokémon to battle based on type advantages to ensure a fair fight.
 - **User Prompts**: Prompts the user to continue to the next round after each battle, enhancing interactivity.
 
+## Concepts Learned
+Through this project, several important programming and software development concepts were applied and reinforced, including:
+
+- **Object-Oriented Programming (OOP)**: Utilizing classes and objects to model Pokémon, their attributes, and behaviors.
+- **File I/O**: Reading and writing files to manage Pokémon data.
+- **Randomness and Probabilities**: Using randomization to simulate realistic and unpredictable battles.
+- **Conditional Logic**: Implementing game rules and mechanics through conditional statements.
+- **Modular Programming**: Breaking down the program into modular functions and classes for better organization and maintainability.
+- **Type Handling and Effectiveness**: Managing complex interactions between different Pokémon types to accurately simulate battle mechanics.
+- **User Interaction**: Creating a user-friendly interface through prompts and clear output formatting.
+- **Algorithm Design**: Designing algorithms for damage calculation, Pokémon selection, and battle simulation.
+
+
 ## Setup
 
 1. **Clone the Repository**
