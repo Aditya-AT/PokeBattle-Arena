@@ -1,17 +1,22 @@
 # PokeBattle Arena
 ![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ELb1h1uAMhPuoA3flKMxKUkUd4-i1NNrfw&s)
 
+# PokeBattle Arena
+![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ELb1h1uAMhPuoA3flKMxKUkUd4-i1NNrfw&s)
+
 This Pokémon Battle Simulation project is a simplified version of Pokémon battles, designed to simulate battles between teams of Pokémon based on their types, stats, and speed. The project includes team generation, type effectiveness calculation, and a turn-based battle system.
 
 ## Features
 
 - **Team Generation**: Create teams of Pokémon with types based on trainer preferences.
+- **Custom Trainer and Team**: Create custom trainers and specify custom Pokémon teams via command-line input.
 - **Type Effectiveness Calculation**: Calculate damage based on the type of the attack and the types of the defender.
 - **Turn-Based Battle System**: Simulate turn-based battles between two teams of Pokémon, with each round clearly separated.
 - **Type-Based Pokémon Selection**: Select the next Pokémon to battle based on type advantages to ensure a fair fight.
 - **User Prompts**: Prompts the user to continue to the next round after each battle, enhancing interactivity.
 
 ## Concepts Learned
+
 Through this project, several important programming and software development concepts were applied and reinforced, including:
 
 - **Object-Oriented Programming (OOP)**: Utilizing classes and objects to model Pokémon, their attributes, and behaviors.
@@ -22,7 +27,6 @@ Through this project, several important programming and software development con
 - **Type Handling and Effectiveness**: Managing complex interactions between different Pokémon types to accurately simulate battle mechanics.
 - **User Interaction**: Creating a user-friendly interface through prompts and clear output formatting.
 - **Algorithm Design**: Designing algorithms for damage calculation, Pokémon selection, and battle simulation.
-
 
 ## Setup
 
@@ -37,12 +41,31 @@ Through this project, several important programming and software development con
 
    This project doesn't have any external dependencies, but ensure you have Python installed (preferably version 3.6 or higher).
 
+3. **Create the `names.txt` File**
+
+   Create a file named `names.txt` with the following content:
+
+    ```
+    name,type1,type2
+    Bulbasaur,Grass,Poison
+    Ivysaur,Grass,Poison
+    Venusaur,Grass,Poison
+    Charmander,Fire,
+    Charmeleon,Fire,
+    Charizard,Fire,Flying
+    Squirtle,Water,
+    Wartortle,Water,
+    Blastoise,Water,
+    Caterpie,Bug,
+    Metapod,Bug,
+    Butterfree,Bug,Flying
+    ```
 
 ## Usage
 
 1. **Generate Teams**
 
-   The teams are generated based on trainer preferences. You can specify trainers and their team names in the `main.py` file.
+   The teams are generated based on trainer preferences. You can specify trainers and their team names in the `main.py` file or via command-line input.
 
     ```python
     # Example team generation
@@ -50,15 +73,23 @@ Through this project, several important programming and software development con
     team_two = generate_team('Gary', 'Team Blue')
     ```
 
-2. **Simulate the Battle**
+2. **Custom Trainer and Team**
+
+   You can create custom trainers and specify a custom list of Pokémon via command-line input.
+
+    ```bash
+    python main.py --trainer1 "CustomTrainer1" --custom1 "Bulbasaur,Charmander,Squirtle" --trainer2 "CustomTrainer2" --custom2 "Caterpie,Metapod,Butterfree"
+    ```
+
+3. **Simulate the Battle**
 
    The main battle simulation is initiated by calling the `simulate_battle` function with the generated teams.
 
     ```python
-    simulate_battle(team_one, team_two)
+    simulate_battle(trainer_one, team_one, trainer_two, team_two)
     ```
 
-3. **Run the Simulation**
+4. **Run the Simulation**
 
    Run the `main.py` script to start the simulation.
 
@@ -95,8 +126,8 @@ Team One wins!
 
 
 ## Future Improvements
-1. Advanced Move Selection: Implementing a more sophisticated move selection mechanism for Pokémon.
-2. Graphical Interface: Developing a graphical user interface for the battle simulation.
+1. **Advanced Move Selection**: Implementing a more sophisticated move selection mechanism for Pokémon.
+2. **Graphical Interface**: Developing a graphical user interface for the battle simulation.
 
 ## Contributing
 If you'd like to contribute to this project, please fork the repository and submit a pull request with your improvements. Contributions are welcome!

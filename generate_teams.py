@@ -25,6 +25,7 @@ def generate_team(trainer: str, team_name: str) -> list:
 
     # Determine trainer's preferred types, default to random if not listed
     preferred_types = trainer_preferences.get(trainer, [])
+    preferred_types = set(pt.lower() for pt in preferred_types)  # Normalize to lowercase for comparison
 
     try:
         with open('names.txt', 'r') as f:
@@ -34,24 +35,57 @@ def generate_team(trainer: str, team_name: str) -> list:
         print("Error: The file 'names.txt' was not found.")
         return []
 
-    if preferred_types:
-        # Normalize preferred types to lower case for case-insensitive comparison
-        preferred_types = set(pt.lower() for pt in preferred_types)
+    # Print debug information
+    print("Trainer:", trainer)
+    print("Preferred Types:", preferred_types)
+    print("Pokémon Entries:", pokemon_entries)
 
-        # Filter entries where any of the Pokémon's types match the preferred types
-        filtered_entries = [
-            entry for entry in pokemon_entries
-            if set(pt.lower() for pt in entry[1:3] if pt).intersection(preferred_types)
-        ]
+    # Filter names based on preferred types if specific preferences are defined
+    if preferred_types:
+        filtered_entries = [entry for entry in pokemon_entries if any(pt.lower() in preferred_types for pt in entry[1:3] if pt)]
         selected_entries = random.sample(filtered_entries, k=6) if len(filtered_entries) >= 6 else filtered_entries
     else:
         # Select random names from the list, avoiding duplicates
         selected_entries = random.sample(pokemon_entries, k=6) if len(pokemon_entries) >= 6 else pokemon_entries
+
+    # Print debug information
+    print("Filtered Entries:", filtered_entries)
+    print("Selected Entries:", selected_entries)
 
     # Create Pokémon instances from the selected entries
     for entry in selected_entries:
         name = entry[0]
         types = [t for t in entry[1:] if t]  # Filter out empty strings to avoid passing empty types
         team.append(pokemon.Pokemon(name, types))
+
+    return team
+
+def generate_custom_team(trainer: str, pokemon_list: list) -> list:
+    """
+    Generates a custom team of Pokémon for a given trainer based on user input.
+
+    Args:
+    trainer (str): Name of the trainer.
+    pokemon_list (list): List of Pokémon names.
+
+    Returns:
+    list: A list of Pokémon objects.
+    """
+    team = []
+
+    try:
+        with open('names.txt', 'r') as f:
+            next(f)  # Skip the header
+            pokemon_entries = {line.strip().split(',')[0]: line.strip().split(',')[1:] for line in f}
+    except FileNotFoundError:
+        print("Error: The file 'names.txt' was not found.")
+        return []
+
+    for name in pokemon_list:
+        if name in pokemon_entries:
+            types = [t for t in pokemon_entries[name] if t]
+            team.append(pokemon.Pokemon(name, types))
+        else:
+            print(f"Warning: {name} is not found in names.txt and will be skipped.")
 
     return team
