@@ -37,25 +37,6 @@ Through this project, several important programming and software development con
 
    This project doesn't have any external dependencies, but ensure you have Python installed (preferably version 3.6 or higher).
 
-3. **Create the `names.txt` File**
-
-   Create a file named `names.txt` with the following content:
-
-    ```
-    name,type1,type2
-    Bulbasaur,Grass,Poison
-    Ivysaur,Grass,Poison
-    Venusaur,Grass,Poison
-    Charmander,Fire,
-    Charmeleon,Fire,
-    Charizard,Fire,Flying
-    Squirtle,Water,
-    Wartortle,Water,
-    Blastoise,Water,
-    Caterpie,Bug,
-    Metapod,Bug,
-    Butterfree,Bug,Flying
-    ```
 
 ## Usage
 
